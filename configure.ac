@@ -30,7 +30,7 @@ if test "x${enable_glamor}" = "xyes"; then
   PKG_CHECK_MODULES([XORG_SERVER_EGL], [egl >= 0], [], [AC_MSG_ERROR([please install libegl1-mesa-dev or mesa-libEGL-devel])])
 fi
 
-if test "x$XRDP_CFLAGS" = "x"; then
+if test "x$XRDP_CFLAGS" != "x"; then
   PKG_CHECK_MODULES([XRDP], [xrdp >= 0.9.80])
   XRDP_CFLAGS=`pkg-config xrdp --cflags`
 fi
